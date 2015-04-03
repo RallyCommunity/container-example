@@ -37,7 +37,7 @@ Ext.define('CustomApp', {
         this.down('#text-container').add({
                     xtype: 'component',
                     itemId: 'text',
-                    html: "selected: " + this.down('rallyfieldvaluecombobox').getValue(),
+                    html: "<h1>selected: " + this.down('rallyfieldvaluecombobox').getValue() + "</h1>",
                     width: 50,
                     margin: 10
         });
@@ -58,7 +58,7 @@ Ext.define('CustomApp', {
     },
 
     _onSelect: function() {
-        Ext.ComponentQuery.query('#text')[0].update("selected: " + this.down('rallyfieldvaluecombobox').getValue());
+        Ext.ComponentQuery.query('#text')[0].update("<h1>selected: " + this.down('rallyfieldvaluecombobox').getValue()+ "</h1>");
         var grid = this.down('rallygrid') ;
         var store = grid.getStore();
         store.clearFilter(true);
